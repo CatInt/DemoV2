@@ -1,0 +1,37 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.aeron.demov1.Game2048Fragment">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <com.aeron.game2048.GameGrid
+            android:id="@+id/gameView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_marginTop="24dp"
+            android:alignmentMode="alignMargins"
+            android:background="@color/colorAccent"
+            android:padding="10dp">
+
+        </com.aeron.game2048.GameGrid>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@android:drawable/ic_media_play" />
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</FrameLayout>

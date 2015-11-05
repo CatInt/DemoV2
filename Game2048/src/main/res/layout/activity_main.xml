@@ -1,0 +1,50 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/material_blue_grey_800"
+    tools:context=".MainActivity">
+
+
+
+    <com.aeron.game2048.GameGrid
+        android:id="@+id/gameView"
+        android:background="@color/material_blue_grey_900"
+        android:padding="10dp"
+        android:layout_gravity="bottom"
+        android:layout_width="fill_parent"
+        android:alignmentMode="alignMargins"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </com.aeron.game2048.GameGrid>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="40dp">
+
+
+        <Button
+            android:id="@+id/btn_restart"
+            android:text="@string/text_score"
+            android:textSize="20sp"
+            android:textColor="@color/material_blue_grey_900"
+            android:backgroundTintMode="src_over"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRestart"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
