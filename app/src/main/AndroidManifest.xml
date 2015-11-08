@@ -20,6 +20,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+        android:authorities="com.example.android.sunshine.app"
+        android:syncable="true"
+        android:exported="true"
+        android:name="com.example.android.sunshine.app.data.WeatherProvider" />
+        <!--<service android:name=".service.SunshineService"/>-->
+        <!--<receiver android:name=".service.SunshineService$AlarmReceiver"-->
+        <!--android:enabled="true"/>-->
+
+        SynAdapter's dummy authentication service
+        <service
+        android:name="com.example.android.sunshine.app.sync.SunshineAuthenticatorService"
+        >
+        <intent-filter>
+        <action android:name="android.accounts.AccountAuthenticator"/>
+        </intent-filter>
+        <meta-data
+        android:name="android.accounts.AccountAuthenticator"
+        android:resource="@xml/authenticator"/>
+        </service>
+
+        <service
+        android:name="com.example.android.sunshine.app.sync.SunshineSyncService"
+        android:exported="true">
+        <intent-filter>
+        <action android:name="android.content.SyncAdapter"/>
+        </intent-filter>
+        <meta-data
+        android:name="android.content.SyncAdapter"
+        android:resource="@xml/syncadapter"/>
+        </service>
     </application>
 
 </manifest>

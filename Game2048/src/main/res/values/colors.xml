@@ -14,10 +14,7 @@
     <color name="color_2048">#ffee4200</color>
     <color name="color_4096">#ffca3700</color>
     <color name="color_8192">#ffa62e00</color>
-
-
-
-
+    <color name="primary_material_dark">#212121</color>
 
 
 </resources>

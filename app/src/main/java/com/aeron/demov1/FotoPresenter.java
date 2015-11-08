@@ -1,10 +1,10 @@
 package com.aeron.demov1;
 
 
+import android.app.Fragment;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.os.Vibrator;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,11 +12,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
 import com.example.android.swipedismiss.SwipeDismissListViewTouchListener;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
@@ -47,17 +47,16 @@ public class FotoPresenter extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View rootView = inflater.inflate(R.layout.fragment_foto_presenter, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_foto_presenter, container, false);
 
         mPTRListView = (PullToRefreshListView) rootView.findViewById(R.id.ptr_list_view);
+
         fillListWithFoto();
-
-
         mAdapter = new SimpleAdapter(getActivity(), mList, R.layout.ptr_list_item, new String[]{"info"}, new int[]{R.id.intro_text});
 //        mPTRListView.setLayoutAnimation(new LayoutAnimationController(AnimationUtils.loadAnimation(getActivity(),R.anim.list_view_anim)));
-        ListView reallist =  mPTRListView.getRefreshableView();
-        reallist.setAdapter(mAdapter);
-        reallist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView realList = mPTRListView.getRefreshableView();
+        realList.setAdapter(mAdapter);
+        realList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                ImageView imageView = new ImageView(getActivity());
@@ -75,7 +74,7 @@ public class FotoPresenter extends android.support.v4.app.Fragment {
         });
         SwipeDismissListViewTouchListener touchListener =
                 new SwipeDismissListViewTouchListener(
-                        reallist,
+                        realList,
                         new SwipeDismissListViewTouchListener.DismissCallbacks() {
                             @Override
                             public boolean canDismiss(int position) {
@@ -86,16 +85,16 @@ public class FotoPresenter extends android.support.v4.app.Fragment {
                             public void onDismiss(ListView listView, int[] reverseSortedPositions) {
                                 for (int position : reverseSortedPositions) {
 
-                                    Log.d(getClass().getSimpleName(),"removeList"+position+"/"+mList.size());
-                                    mList.remove(position-1);
+                                    Log.d(getClass().getSimpleName(), "removeList" + position + "/" + mList.size());
+                                    mList.remove(position - 1);
                                 }
                                 mAdapter.notifyDataSetChanged();
                             }
                         });
 
-        reallist.setOnTouchListener(touchListener);
+        realList.setOnTouchListener(touchListener);
 
-        reallist.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        realList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 Vibrator vibrator = (Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE);

@@ -1,2 +1,2 @@
-include ':app', 'Game2048', 'SwipeToDismiss'
+include ':app', 'Game2048', 'SwipeToDismiss', 'Sunshine'
 include ':PullToRefreshLibrary'

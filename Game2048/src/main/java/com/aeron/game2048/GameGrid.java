@@ -4,15 +4,12 @@ package com.aeron.game2048;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.res.ColorStateList;
 import android.graphics.Point;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.GridLayout;
-import android.widget.Toast;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -118,7 +115,7 @@ public class GameGrid extends GridLayout implements CallBack {
         mScore = 0;
         mLevel = 0;
         mStep = 1;
-        mMaxCard.setNum(0,0);
+        mMaxCard.setNum(0, 0);
         addScore(0);
         addRandomNum(2);
     }

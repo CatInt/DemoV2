@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/DemoV1.iml" filepath="$PROJECT_DIR$/DemoV1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Game2048/Game2048.iml" filepath="$PROJECT_DIR$/Game2048/Game2048.iml" />
       <module fileurl="file://$PROJECT_DIR$/PullToRefreshLibrary/PullToRefreshLibrary.iml" filepath="$PROJECT_DIR$/PullToRefreshLibrary/PullToRefreshLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sunshine/Sunshine.iml" filepath="$PROJECT_DIR$/Sunshine/Sunshine.iml" />
       <module fileurl="file://$PROJECT_DIR$/SwipeToDismiss/SwipeToDismiss.iml" filepath="$PROJECT_DIR$/SwipeToDismiss/SwipeToDismiss.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
